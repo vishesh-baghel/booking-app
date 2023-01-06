@@ -11,6 +11,10 @@
   margin: 20px 0 100px 0;
 }
 
+.headerContainer.listMode {
+  margin: 20px 0 10px 0;
+}
+
 .headerList {
   display: flex;
   gap: 40px;
@@ -19,12 +23,18 @@
 .headerListItem {
   display: flex;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .headerListItem.active {
   border: 1px solid black;
-  padding: 10px;
-  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .headerDescription {
@@ -68,6 +78,7 @@
   align-items: center;
   padding: 0 10px;
   cursor: pointer;
+  position: relative;
 }
 
 .headerSearchInput {
@@ -81,4 +92,51 @@
 .headerDateRange {
   position: absolute;
   top: 53px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  z-index: 1;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.optionsItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.optionsItemText {
+  font-size: 16px;
+}
+
+.optionsItemCounterBtn {
+  border: none;
+  background-color: #f9a826;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.optionsItemCounterBtn:disabled {
+  background-color: #f9a826;
+  color: white;
+  opacity: 0.5;
+  cursor: not-allowed;
 }

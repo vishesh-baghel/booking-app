@@ -1,0 +1,54 @@
+.featuredProperties {
+  display: flex;
+  width: 100%;
+  max-width: 1024px;
+  gap: 20px;
+  margin-bottom: 80px;
+}
+
+.featuredPropertiesItems {
+  flex: 1;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredPropertiesImg {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.fpName {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.fpPrice {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+.fpRating {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+.fpRating > button {
+  background: none;
+  border: none;
+  color: #f8e825;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-right: 10px;
+}
+
+.fpRating > span {
+  font-size: 1.2rem;
+  font-weight: 300;
+}

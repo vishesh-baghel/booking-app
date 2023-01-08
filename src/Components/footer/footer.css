@@ -1,0 +1,36 @@
+.footer {
+  width: 100%;
+  background-color: aliceblue;
+  padding: 20px;
+}
+
+.footerList {
+  display: flex;
+  justify-content: left;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.footerListItems {
+  list-style: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footerListItem {
+  margin-right: 20px;
+}
+
+.footerListItem a {
+  text-decoration: none;
+  color: black;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

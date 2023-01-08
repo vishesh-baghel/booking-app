@@ -10,7 +10,7 @@ function PropertyList() {
           className="propertyListImg"
         />
         <div className="propertyListTitle">
-          <h1>Hotels 2344</h1>
+          <h1>Hotels</h1>
         </div>
       </div>
       <div className="propertyListItem">
@@ -20,7 +20,7 @@ function PropertyList() {
           className="propertyListImg"
         />
         <div className="propertyListTitle">
-          <h1>Apartments 5003</h1>
+          <h1>Apartments</h1>
         </div>
       </div>
       <div className="propertyListItem">
@@ -30,7 +30,7 @@ function PropertyList() {
           className="propertyListImg"
         />
         <div className="propertyListTitle">
-          <h1>Suites 123</h1>
+          <h1>Suites</h1>
         </div>
       </div>
       <div className="propertyListItem">
@@ -40,7 +40,7 @@ function PropertyList() {
           className="propertyListImg"
         />
         <div className="propertyListTitle">
-          <h1>Launges 3423</h1>
+          <h1>Launges</h1>
         </div>
       </div>
       <div className="propertyListItem">
@@ -50,7 +50,7 @@ function PropertyList() {
           className="propertyListImg"
         />
         <div className="propertyListTitle">
-          <h1>Flats 234</h1>
+          <h1>Flats</h1>
         </div>
       </div>
     </div>

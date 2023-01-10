@@ -14,10 +14,22 @@ function SearchItem() {
         <span className="siTaxiDetails">Free airport taxi</span>
         <span className="siSubtitle">Free wifi in all rooms</span>
         <span className="siSubtitle">Free parking</span>
-        <span className="siSubtitle">Free breakfast</span>
-        <span className="siSubtitle">Free gym</span>
+        <span className="siCancellation">Free Cancellation</span>
+        <span className="siGuarantee">
+          You can cancel later, so book today for this awesome price!!
+        </span>
       </div>
-      <div className="searchItemDetails">Details</div>
+      <div className="searchItemDetails">
+        <div className="itemRating">
+          <span>Excellent</span>
+          <button>4.5</button>
+        </div>
+        <div className="itemDetails">
+          <div className="itemPrice">₹1000</div>
+          <span>Includes taxes and fees</span>
+          <button>See availability</button>
+        </div>
+      </div>
     </div>
   );
 }

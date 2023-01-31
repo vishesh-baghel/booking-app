@@ -1,12 +1,21 @@
 import "./hotel.css";
+import { useState } from "react";
 import NavBar from "../../Components/navBar/NavBar";
 import Header from "../../Components/header/Header";
 import MailList from "../../Components/mailList/MailList";
 import Footer from "../../Components/footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleXmark,
+  faLocationDot,
+  faCircleArrowLeft,
+  faCircleArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Hotel() {
+  const [slideNumber, setSlideNumber] = useState(0);
+  const [open, setOpen] = useState(false);
+
   const photos = [
     {
       src: "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2021&q=80",
@@ -22,13 +31,61 @@ function Hotel() {
     },
   ];
 
+  function handleOpen(i) {
+    setOpen(true);
+    setSlideNumber(i);
+  }
+
+  function handleMove(movement) {
+    if (movement === "l") {
+      if (slideNumber === 0) {
+        setSlideNumber(photos.length - 1);
+      } else {
+        setSlideNumber(slideNumber - 1);
+      }
+    } else {
+      if (slideNumber === photos.length - 1) {
+        setSlideNumber(0);
+      } else {
+        setSlideNumber(slideNumber + 1);
+      }
+    }
+  }
+
   return (
     <div>
       <NavBar />
       <Header type="list" />
       <div className="hotelContainer">
+        {open && (
+          <div className="hotelImgSlider">
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              className="close"
+              onClick={() => setOpen(false)}
+            />
+            <FontAwesomeIcon
+              icon={faCircleArrowLeft}
+              className="arrow"
+              onClick={() => {
+                handleMove("l");
+              }}
+            />
+            <div className="sliderWrapper">
+              <img src={photos[slideNumber].src} alt="" className="sliderImg" />
+            </div>
+            <FontAwesomeIcon
+              icon={faCircleArrowRight}
+              className="arrow"
+              onClick={() => {
+                handleMove("r");
+              }}
+            />
+          </div>
+        )}
         <div className="hotelWrapper">
           <h1 className="hotelTitle">Hotel Grand</h1>
+          <button className="hotelBookBtn">Book Now</button>
           <div className="hotelAddress">
             <FontAwesomeIcon icon={faLocationDot} />
             <span>Address: 1234, Main Street, New York</span>
@@ -40,14 +97,22 @@ function Hotel() {
             Book a stay over ₹2000 and get a free airport taxi
           </div>
           <div className="hotelImg">
-            {photos.map((photo) => (
+            {photos.map((photo, i) => (
               <div className="hotelImageWrapper">
-                <img src={photo.src} alt="" className="hotelImgInside" />
+                <img
+                  src={photo.src}
+                  alt=""
+                  className="hotelImgInside"
+                  onClick={() => {
+                    handleOpen(i);
+                  }}
+                />
               </div>
             ))}
           </div>
           <div className="hotelDescription">
             <div className="hotelText">
+              <h1>Stay in the heart of Delhi</h1>
               <p>
                 Featuring 4-star accommodations, SCOOVEY The BMK Hotel &
                 Banquets is located in New Delhi, 6.6 km from Tughlaqabad Fort
